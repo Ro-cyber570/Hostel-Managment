@@ -1,0 +1,58 @@
+<ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="/images/Minimal_Dynamic_Background.jpg" />
+        </div>
+        <a href="#user">
+          <i class="material-icons" style="font-size: 70px;color: aliceblue;"
+            >account_circle</i
+          >
+        </a>
+        <a href="#name"
+          ><span class="white-text name"><%=currentUser.name%></span></a
+        >
+        <a href="#email"
+          ><span class="white-text email"><%=currentUser.email%></span></a
+        >
+      </div>
+    </li>
+    <li>
+      <a class="waves-effect" href="/admin/dashboard"
+        ><i class="material-icons">dashboard</i> Dashboard</a
+      >
+    </li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Other links</a></li>
+    <li>
+      <a href="/admin/dashboard">
+        Notifications <i class="material-icons">notifications</i>
+      </a>
+    </li>
+    <li>
+      <a href="/admin/dashboard/details">
+        <i class="material-icons">search</i>Search</a
+      >
+    </li>
+    <li>
+      <a href="/admin/dashboard/item/edit/request">
+        <i class="material-icons">weekends</i>Request to edit items <span style="background-color: aqua;"><%=totalitemsrequest%></span></a
+      >
+ 
+    </li>
+    <li>
+      <a href="/admin/dashboard/contact/edit/request">
+        <i class="material-icons">contacts</i>Request to edit contacts<span style="background-color: aqua;"><%=totalcontactsrequest%></span></a>
+      
+    </li>
+    <li>
+      <a href="#">
+        <i class="material-icons">money</i>Request for edit fees </a
+      >
+    </li>
+  </ul> 
+  <a href="#" data-target="slide-out" class="sidenav-trigger btn-floating"
+    ><i class="material-icons slide-out-icon">chevron_right</i></a
+  >
+  
+  

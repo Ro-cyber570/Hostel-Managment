@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Hostel Management Portal</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css"> -->
+    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script
+    src="https://kit.fontawesome.com/742a48addb.js"
+    crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      media="all"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/card.css" />
+    <link rel="stylesheet" href="/admin-styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper" style="padding: 10px 40px;">
+        <div class="left">
+         
+        </div>
+        <a href="#!" class="brand-logo center">Hostel</a>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <%if(!currentUser){%>
+          <li><a class="signed-as" href="/auth/google">Sign Up/Login with G+</a></li>
+          <%}else{%>
+          <li><a class="signed-as" href="#">Signed in as <%=currentUser.name%></a></li>
+          <li>
+            <%if(clientType == "admin"|| clientType=="superuser"){%>
+            <!-- <a href="#">Edit Profile </a> -->
+            <%}else{%>
+            <a href="/user/dashboard/profile/<%=currentUser.googleId%>">
+              Your Profile
+            </a>
+            <%}%>
+          </li>
+          <li><a href="/auth/logout">LogOut</a></li>
+          <%}%>
+        </ul>
+
+        <ul id="nav-mobile" class="view-on-med-and-down">
+        </li>
+        <%if(!currentUser){%>
+          <li><a class="sgup-g" href="/auth/google">Sign Up/Login with G+</a></li>
+          <%}else{%>
+        <li><a class="logout" href="/auth/logout">LogOut</a></li>
+        <%}%>
+        </ul>
+
+      </div>
+    </nav>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var elems = document.querySelectorAll(".sidenav");
+      var instances = M.Sidenav.init(elems, {});
+    });
+  </script>
+</html>
